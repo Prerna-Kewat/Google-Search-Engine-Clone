@@ -1,120 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <title>Google Search</title>
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            .Container-google-logo{
+                display: flex;
+                align-items: center;
+                justify-content: center;
 
-    <!-- Font Awesome (for search icon) -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-        body {
-            height: 100%;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Header links */
-        .Container-google-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .google-logo {
-            height: 15%;
-            width: 22%;
-        }
-
-        /* Logo */
-        .ContainerSearchBar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .SearchBar {
-            border-radius: 15em;
-            width: 45%;
-            padding: 12px 12px 12px 50px;
-            font-size: large;
-            border: 1px solid #DFE1E5;
-        }
-
-        /* Search box */
-        .SearchBar:hover {
-            box-shadow: 1px 1px 5px 2px #ebe7e7;
-        }
-
-        .SearchBar:focus {
-            outline: none;
-        }
-
-        .fa-search {
-            position: relative;
-            left: 40px;
-        }
-
-        .Buttons {
-            display: flex;
-            justify-content: center;
-        }
-
-        .GoogleSearch,
-        .Lucky {
+            }
+             .google-logo{
+                height: 15%;
+                width: 22%;
+            }
+             .SearchBar{
+                border-radius: 15em;
+                width: 45%;
+                height: 35%;
+                padding: 12px;
+                font-size: large;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid #DFE1E5;
+                border-color: #DFE1E5;
+                padding-left: 9vh;
+                
+            }
+            .SearchBar:hover{  
+                box-shadow: 1px 1px 5px 2px #ebe7e7;
+            }
+            input {
+                border-top-style: hidden;
+                border-right-style: hidden;
+                border-left-style: hidden;
+                border-bottom-style: groove;
+            }
+            input .SearchBar{
+                color: rgb(33,33,33);
+                font-size: 1.5vh;
+            }
+            .SearchBar:focus {
+                outline: none;
+            }
+            .ContainerSearchBar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+           .Buttons{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+           }
+           button{
             margin: 15px;
-            padding: 8px 16px;
+            padding: 0.75%;
             background-color: #F8F9FA;
-            border: 1px solid #F8F9FA;
+            border-width: 0px;
+            border-color: #F8F9FA;
             border-radius: 7px;
-            cursor: pointer;
-        }
-
-        /* Buttons */
-        .GoogleSearch:hover,
-        .Lucky:hover {
-            border: 1px solid #cccfd2;
+            border-top-style: hidden;
+            border-right-style: hidden;
+            border-left-style: hidden;
+            border-bottom-style: groove;
+           }
+           .Lucky:focus {
+                outline: none;
+            }
+           .GoogleSearch{
+            padding: 0.75%;
+            background-color: #F8F9FA;
+            border-width: 0px;
+            border-color: #F8F9FA;
+            border-radius: 7px;
+           }
+           .GoogleSearch:hover, button:hover{
+            border-width: 1px;
+            border-color: #cccfd2;
             box-shadow: 2px 2px 5px 2px #ebe7e7;
-        }
-
-        a {
+           }
+           a{
             float: right;
             color: #333131;
             text-decoration: none;
             font-size: 13px;
-            font-family: Arial, sans-serif;
-            padding: 1em;
-        }
-    </style>
-</head>
+            font-family: arial, sans-serif;
+           }
+           #Image,#Advance{
+            padding-right:  1.5em;
+            padding-top: 1em;
+           }
+            body{
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                display: flex;
+            }
+            input[type=text] {
+                background-image: url('search-icon.png');
+                background-position: 10px 10px; 
+                background-repeat: no-repeat;
+            }
+            .fa-search{
+                position: relative;
+                left: 6vh;
+            }
+        </style>
+    </head>
+    <body>
+        <br><br><br>
 
-<body>
+        <form action="https://www.google.com/search" method="get">
 
-    <!-- Header -->
-    <div class="header">
-        <a href="GoogleImageSearch.html">Image Search</a>
-        <a href="GoogleAdvancedSearch.html">Advanced Search</a>
-    </div>
+           
+            <a href="GoogleAdvancedSearch.html" id="Advance">Advanced Search</a>
+            <a href="GoogleImageSearch.html" id="Image">Image Search</a> 
 
-    <!-- Logo -->
-    <div class="logo">
-        <img src="google-logo.png" alt="Google">
-    </div>
+            <br><br><br><br>
 
-    <!-- Search Form -->
-    <form action="https://www.google.com/search" method="get">
+            <div class="Container-google-logo">
+                <img alt="Google" src="google-logo.png" class="google-logo">
+            </div>
 
-        <div class="search-container">
-            <i class="fa fa-search"></i>
-            <input type="text" name="q" class="search-box" placeholder="Search Google...">
-        </div>
+            <br><br>
 
-        <div class="buttons">
-            <input type="submit" value="Google Search" class="btn">
-            <input type="submit" name="btnI" value="I'm Feeling Lucky" class="btn">
-        </div>
+            <div class="ContainerSearchBar">
+                <i class="fa fa-search" aria-hidden="true"></i>
+                <input type="text" name="q" class="SearchBar">
+            </div>
 
-    </form>
+            <br>
 
-</body>
+            <div class="Buttons">
+                
+                <input type="submit" value="Google Search" class="GoogleSearch">
+
+                <button type="submit" name="btnI" class="Lucky">I'm Feeling Lucky</button>
+            </div>
+
+        </form>
+    </body>
 </html>
