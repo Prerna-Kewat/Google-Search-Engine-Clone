@@ -1,117 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Search</title>
+    <title>Google Search</title>
 
-    <!-- Font Awesome -->
+    <!-- Font Awesome (for search icon) -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <style>
         body {
-            height: 100%;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Header links */
+        .header {
+            display: flex;
+            justify-content: flex-end;
+            padding: 15px;
+        }
+
+        .header a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #333;
+            font-size: 14px;
+        }
+
+        /* Logo */
+        .logo {
+            margin-top: 100px;
+        }
+
+        .logo img {
+            width: 270px;
+        }
+
+        /* Search box */
+        .search-container {
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+            width: 40%;
+        }
+
+        .search-container i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #9aa0a6;
+        }
+
+        .search-box {
             width: 100%;
-            display: flex;
-            flex-direction: column;
+            padding: 12px 12px 12px 40px;
+            border-radius: 25px;
+            border: 1px solid #dcdcdc;
         }
 
-        .Container-google-logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .search-box:hover {
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
         }
 
-        .google-logo {
-            height: 15%;
-            width: 22%;
-        }
-
-        .ContainerSearchBar {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .SearchBar {
-            border-radius: 15em;
-            width: 45%;
-            padding: 12px 12px 12px 50px;
-            font-size: large;
-            border: 1px solid #DFE1E5;
-        }
-
-        .SearchBar:hover {
-            box-shadow: 1px 1px 5px 2px #ebe7e7;
-        }
-
-        .SearchBar:focus {
+        .search-box:focus {
             outline: none;
         }
 
-        .fa-search {
-            position: relative;
-            left: 40px;
+        /* Buttons */
+        .buttons {
+            margin-top: 20px;
         }
 
-        .Buttons {
-            display: flex;
-            justify-content: center;
-        }
-
-        .GoogleSearch,
-        .Lucky {
-            margin: 15px;
-            padding: 8px 16px;
-            background-color: #F8F9FA;
-            border: 1px solid #F8F9FA;
-            border-radius: 7px;
+        .btn {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #f8f9fa;
+            border-radius: 5px;
             cursor: pointer;
         }
 
-        .GoogleSearch:hover,
-        .Lucky:hover {
-            border: 1px solid #cccfd2;
-            box-shadow: 2px 2px 5px 2px #ebe7e7;
-        }
-
-        a {
-            float: right;
-            color: #333131;
-            text-decoration: none;
-            font-size: 13px;
-            font-family: Arial, sans-serif;
-            padding: 1em;
+        .btn:hover {
+            border: 1px solid #ccc;
         }
     </style>
 </head>
 
 <body>
 
+    <!-- Header -->
+    <div class="header">
+        <a href="GoogleImageSearch.html">Image Search</a>
+        <a href="GoogleAdvancedSearch.html">Advanced Search</a>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="google-logo.png" alt="Google">
+    </div>
+
+    <!-- Search Form -->
     <form action="https://www.google.com/search" method="get">
 
-        <a href="google-images.html">Advanced Search</a>
-        <a href="GoogleImageSearch.html">Image Search</a>
-
-        <br><br><br>
-
-        <div class="Container-google-logo">
-            <img alt="Google" src="google-logo.png" class="google-logo">
-        </div>
-
-        <br><br>
-
-        <div class="ContainerSearchBar">
+        <div class="search-container">
             <i class="fa fa-search"></i>
-            <input type="text" name="q" class="SearchBar">
+            <input type="text" name="q" class="search-box" placeholder="Search Google...">
         </div>
 
-        <br>
-
-        <div class="Buttons">
-            <!-- Normal Search -->
-            <input type="submit" value="Google Search" class="GoogleSearch">
-
-            <!-- Proper Lucky Button -->
-            <input type="submit" name="btnI" value="I'm Feeling Lucky" class="Lucky">
+        <div class="buttons">
+            <input type="submit" value="Google Search" class="btn">
+            <input type="submit" name="btnI" value="I'm Feeling Lucky" class="btn">
         </div>
 
     </form>
